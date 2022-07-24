@@ -5,16 +5,26 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+@Entity
 public class Category implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	
 	// Para evitar a referencia ciclica(quando cada classe tem muitos/muitos) usamos o @JsonIgnore
 	@JsonIgnore
+	@OneToMany(mappedBy = "category")
 	private List<Product> products = new ArrayList<>();
 
 	public Category() {
