@@ -44,7 +44,7 @@ public class ProductResource {
 	// O @PathVariable reconhece o id pelo (localhots:8080/categories/1)
 	public ResponseEntity<Product> findById(@PathVariable Long id){
 		// Instance 
-		Product cat = categoryRepository.findById(id);
+		Product cat = categoryRepository.findById(id).get();
 		return ResponseEntity.ok().body(cat);
 	}
 }

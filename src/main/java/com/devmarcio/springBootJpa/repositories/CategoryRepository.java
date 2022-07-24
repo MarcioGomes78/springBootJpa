@@ -1,20 +1,19 @@
 package com.devmarcio.springBootJpa.repositories;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.stereotype.Component;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.devmarcio.springBootJpa.entities.Category;
 
 // Reconhece que uma classe vai participar de uma injeção de dependecia
-@Component
+//@Component
 // Repository é uma classe pecial que acessa os dados
 // Ela é resposável de manipular os dados referentea aquela entidade (Category)
-public class CategoryRepository {
-
+@Repository
+public interface CategoryRepository extends JpaRepository<Category, Long>{
+	
+	
+	/*
 	// Map é uma coleção muito importante aprender fica a dica
 	// Ele é uma coleção de pares(chave e valor)
 	// No java o Map é uma Interface, temos que instanciar 
@@ -40,4 +39,5 @@ public class CategoryRepository {
 		// O construtor map.values() pega todos os valores do tipo Category
 		return new ArrayList<Category>(map.values());
 	}
+	*/
 }
