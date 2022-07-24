@@ -1,5 +1,4 @@
 # Projeto Básico - Java web no Spring Boot
-###### DevSuperior - sua carreira dev com fundamento de ensino superior
 
 ## O que você vai aprender
 - Criar um projeto básico Java web no Spring Boot e Maven
