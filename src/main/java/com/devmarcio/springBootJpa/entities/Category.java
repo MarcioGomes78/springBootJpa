@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Category implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Long id;
 	private String name;
 	
+	// Para evitar a referencia ciclica(quando cada classe tem muitos/muitos) usamos o @JsonIgnore
+	@JsonIgnore
 	private List<Product> products = new ArrayList<>();
 
 	public Category() {
